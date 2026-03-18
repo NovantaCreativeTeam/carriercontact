@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.form.identifiable_object.data_provider.carrier_contact_form_data_provider:
+        class: 'Novanta\CarrierContact\Form\IdentifiableObject\DataProvider\CarrierContactFormDataProvider'
+        arguments:
+            - '@prestashop.core.query_bus'

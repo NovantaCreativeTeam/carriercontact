@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.grid.carrier_contact_grid_factory:
+        class: 'PrestaShop\PrestaShop\Core\Grid\GridFactory'
+        arguments:
+            - '@novanta.carriercontact.grid.definition.factory.carrier_contact'
+            - '@novanta.carriercontact.grid.data.factory.carrier_contact_data_factory'
+            - '@prestashop.core.grid.filter.form_factory'
+            - '@PrestaShop\PrestaShop\Core\Hook\HookDispatcher'

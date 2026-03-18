@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.grid.definition.factory.carrier_contact:
+        class: 'Novanta\CarrierContact\Grid\Definition\Factory\CarrierContactDefinitionFactory'
+        parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
+        public: true

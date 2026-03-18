@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.form.identifiable_object.data_handler.carrier_contact_form_data_handler:
+        class: 'Novanta\CarrierContact\Form\IdentifiableObject\DataHandler\CarrierContactFormDataHandler'
+        arguments:
+            - '@prestashop.core.command_bus'
+

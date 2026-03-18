@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Novanta\\CarrierContact\\": "src/"
+        }
+    },
+    "config": {
+        "prepend-autoloader": false
+    },
+    "author": "PrestaShop",
+    "license": "AFL-3.0"
+}

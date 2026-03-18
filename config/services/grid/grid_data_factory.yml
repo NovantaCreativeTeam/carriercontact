@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.grid.data.factory.carrier_contact_data_factory:
+        class: '%prestashop.core.grid.data.factory.doctrine_grid_data_factory%'
+        arguments:
+            - '@novanta.carriercontact.grid.query.carrier_contact_query_builder'
+            - '@PrestaShop\PrestaShop\Core\Hook\HookDispatcher'
+            - '@prestashop.core.grid.query.doctrine_query_parser'
+            - 'carrierContacts'

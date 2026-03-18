@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.grid.query.carrier_contact_query_builder:
+        class: 'Novanta\CarrierContact\Grid\Query\CarrierContactQueryBuilder'
+        parent: 'prestashop.core.grid.abstract_query_builder'
+        arguments:
+            - '@prestashop.core.query.doctrine_search_criteria_applicator'
+        public: true

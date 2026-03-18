@@ -1,0 +1,39 @@
+services:
+    _defaults:
+        public: true
+
+    # ============== Queries
+
+    novanta.carriercontact.adapter.carrier_contact.query_handler.get_carrier_contact_for_editing_handler:
+        class: 'Novanta\CarrierContact\Adapter\CarrierContact\QueryHandler\GetCarrierContactForEditingHandler'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            -   name: tactician.handler
+                command: Novanta\CarrierContact\Domain\CarrierContact\Query\GetCarrierContactForEditing
+
+    # ============== Commands
+    novanta.carriercontact.adapter.carrier_contact.command_handler.add_carrier_contact_handler:
+        class: 'Novanta\CarrierContact\Adapter\CarrierContact\CommandHandler\AddCarrierContactHandler'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            -   name: tactician.handler
+                command: Novanta\CarrierContact\Domain\CarrierContact\Command\AddCarrierContact
+
+    novanta.carriercontact.adapter.carrier_contact.command_handler.update_carrier_contact_handler:
+        class: 'Novanta\CarrierContact\Adapter\CarrierContact\CommandHandler\UpdateCarrierContactHandler'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            -   name: tactician.handler
+                command: Novanta\CarrierContact\Domain\CarrierContact\Command\UpdateCarrierContact
+
+
+    novanta.carriercontact.adapter.carrier_contact.command_handler.delete_carrier_contact_handler:
+        class: 'Novanta\CarrierContact\Adapter\CarrierContact\CommandHandler\DeleteCarrierContactHandler'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags:
+            -   name: tactician.handler
+                command: Novanta\CarrierContact\Domain\CarrierContact\Command\DeleteCarrierContact

@@ -1,0 +1,43 @@
+admin_carrier_contact_index:
+    path: /carrier/contact/list
+    methods: ['GET']
+    defaults:
+        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::indexAction
+    options:
+        expose: true
+
+admin_carrier_contact_search:
+    path: /carrier/contact/list
+    methods: ['POST']
+    defaults:
+        _controller: 'Novanta\CarrierContact\Controller\Admin\CarrierContactController::searchAction'
+        _legacy_controller: AdminCarrierContact
+        _legacy_link: AdminCarrierContact
+
+admin_carrier_contact_new:
+    path: /carrier/contact
+    methods: ['GET', 'POST']
+    defaults:
+        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::createAction
+    options:
+        expose: true
+
+admin_carrier_contact_edit:
+    path: /carrier/contact/{carrierContactId}
+    methods: ['GET', 'POST']
+    defaults:
+        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::editAction
+    requirements:
+        carrierContactId: \d+
+    options:
+        expose: true
+
+admin_carrier_contact_remove:
+    path: /carrier/contact/{carrierContactId}
+    methods: ['DELETE']
+    defaults:
+        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::deleteAction
+    requirements:
+        carrierContactId: \d+
+    options:
+        expose: true

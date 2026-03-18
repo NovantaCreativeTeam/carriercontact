@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.form.carrier_contact_type:
+        class: 'Novanta\CarrierContact\Form\Type\CarrierContactType'
+        parent: 'form.type.translatable.aware'
+        arguments:
+            - '@prestashop.core.form.choice_provider.carrier_by_reference_id'
+        public: true
+        tags:
+            - { name: form.type }
+

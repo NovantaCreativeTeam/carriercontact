@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.form.identifiable_object.handler.carrier_contact_form_handler:
+        class: 'PrestaShop\PrestaShop\Core\Form\IdentifiableObject\Handler\FormHandler'
+        factory: 'prestashop.core.form.identifiable_object.handler.form_handler_factory:create'
+        arguments:
+            - '@novanta.carriercontact.form.identifiable_object.data_handler.carrier_contact_form_data_handler'

@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        public: true
+
+    novanta.carriercontact.form.choice_provider.carrier_contact_choice_provider:
+        class: 'Novanta\CarrierContact\Form\ChoiceProvider\CarrierContactChoiceProvider'
+        arguments:
+            - '@doctrine.orm.entity_manager'

@@ -40,7 +40,7 @@ class CarrierContactController extends FrameworkBundleAdminController
         $toolbarButtons = [
             'clear_cache' => [
                 'href' => $this->generateUrl('admin_carrier_contact_new'),
-                'desc' => $this->trans('New Contact', 'Modules.CarrierContact.Admin'),
+                'desc' => $this->trans('New Contact', 'Modules.Carriercontact.Admin'),
                 'icon' => 'add',
             ],
         ];
@@ -88,12 +88,12 @@ class CarrierContactController extends FrameworkBundleAdminController
         $result = $carrierContactFormHandler->handle($carrierContactForm);
 
         if (null !== $result->getIdentifiableObjectId()) {
-            $this->addFlash('success', $this->trans('Carrier contact created successfully.', 'Modules.carriercontact.Notifications'));
+            $this->addFlash('success', $this->trans('Carrier contact created successfully.', 'Modules.Carriercontact.Notifications'));
 
             return $this->redirectToRoute('admin_carrier_contact_index');
         }
 
-        return $this->render('@Modules/CarrierContact/views/templates/admin/CarrierContact/create.html.twig', [
+        return $this->render('@Modules/carriercontact/views/templates/admin/CarrierContact/create.html.twig', [
             'carrierContactForm' => $carrierContactForm->createView(),
         ]);
     }
@@ -115,12 +115,12 @@ class CarrierContactController extends FrameworkBundleAdminController
         $result = $carrierContactFormHandler->handleFor($carrierContactId, $carrierContactForm);
 
         if (null !== $result->getIdentifiableObjectId()) {
-            $this->addFlash('success', $this->trans('Carrier contact updated successfully.', 'Modules.carriercontact.Notifications'));
+            $this->addFlash('success', $this->trans('Carrier contact updated successfully.', 'Modules.Carriercontact.Notifications'));
 
             return $this->redirectToRoute('admin_carrier_contact_index');
         }
 
-        return $this->render('@Modules/CarrierContact/views/templates/admin/CarrierContact/update.html.twig', [
+        return $this->render('@Modules/carriercontact/views/templates/admin/CarrierContact/update.html.twig', [
             'carrierContactForm' => $carrierContactForm->createView(),
         ]);
     }
@@ -135,7 +135,7 @@ class CarrierContactController extends FrameworkBundleAdminController
     {
         try {
             $this->getCommandBus()->handle(new DeleteCarrierContact($carrierContactId));
-            $this->addFlash('success', $this->trans('Carrier contact deleted correctly!', 'Modules.carriercontact.Admin'));
+            $this->addFlash('success', $this->trans('Carrier contact deleted correctly!', 'Modules.Carriercontact.Admin'));
         } catch (\Exception $e) {
             $this->addFlash('error', $this->getErrorMessageForException($e, $this->getErrorMessages($e)));
         }
@@ -151,7 +151,7 @@ class CarrierContactController extends FrameworkBundleAdminController
     private function getErrorMessages(\Exception $e)
     {
         return [
-            CarrierContactNotFoundException::class => $this->trans('Carrier contact cannot be loaded (or found)', 'Modules.carriercontact.Notifications'),
+            CarrierContactNotFoundException::class => $this->trans('Carrier contact cannot be loaded (or found)', 'Modules.Carriercontact.Notifications'),
         ];
     }
 }

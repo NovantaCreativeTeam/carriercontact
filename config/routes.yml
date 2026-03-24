@@ -38,7 +38,7 @@ admin_carrier_contact_remove:
     path: /carrier/contact/{carrierContactId}
     methods: ['DELETE']
     defaults:
-        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::deleteAction
+        _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::removeAction
     requirements:
         carrierContactId: \d+
     options:

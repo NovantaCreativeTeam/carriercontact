@@ -1,6 +1,6 @@
 <?php
 
-use Novanta\CarrierContact\Adapter\Install\InstallerFactory;
+use Novanta\CarrierContact\Install\InstallerFactory;
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 
 $autoloadPath = dirname(__FILE__) . '/vendor/autoload.php';

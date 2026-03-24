@@ -17,7 +17,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
  */
-namespace Novanta\CarrierContact\Adapter\Install;
+namespace Novanta\CarrierContact\Install;
 
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 
@@ -158,7 +158,7 @@ class Installer
             $tab_names[$lang['id_lang']] = $translator->trans('Carrier Contacts', [], 'Modules.Carriercontact.Admin', $lang['locale']);
         }
 
-        return $this->addTab($tab_names, 'AdminCarrierContact', 'AdminParentCustomerThreads');
+        return $this->addTab($tab_names, 'AdminCarrierContact', 'AdminParentShipping');
     }
 
     /**

@@ -17,7 +17,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
  */
-namespace Novanta\CarrierContact\Adapter\Install;
+
+namespace Novanta\CarrierContact\Install;
 
 if (!defined('_PS_VERSION_')) {
     exit;

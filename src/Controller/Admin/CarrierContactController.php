@@ -39,7 +39,7 @@ class CarrierContactController extends FrameworkBundleAdminController
 
         $toolbarButtons = [
             'clear_cache' => [
-                'href' => $this->generateUrl('admin_carrier_contact_create'),
+                'href' => $this->generateUrl('admin_carrier_contact_new'),
                 'desc' => $this->trans('New Contact', 'Modules.CarrierContact.Admin'),
                 'icon' => 'add',
             ],

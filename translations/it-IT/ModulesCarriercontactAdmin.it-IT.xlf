@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin-dev" source-language="it-IT" target-language="it-IT" datatype="plaintext">
+    <body>
+      <trans-unit id="304a37dded89634e89a111556c4919a2">
+        <source>Carrier Contacts</source>
+        <target>Contatti corriere</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="01682cc538c2887085883dc9086078a2">
+        <source>Carrier Contact</source>
+        <target>Contatto corriere</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f98e2f9792e666c1ab7d4a1c097f388f">
+        <source>Enable functionality to specify Carrier contact details.</source>
+        <target>Abilita le funzionalità per specificare i contatti dei corrieri</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="876f23178c29dc2552c0b48bf23cd9bd">
+        <source>Are you sure you want to uninstall?</source>
+        <target>Sei sicuro di voler disinstallare il modulo?</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="cad275df2f3d72c6904ecec22ee95416">
+        <source>Email 1</source>
+        <target>Email 1</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c7d8fb705c52105689d00cba223a33fa">
+        <source>Email 2</source>
+        <target>Email 2</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

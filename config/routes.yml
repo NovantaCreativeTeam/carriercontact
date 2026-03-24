@@ -3,6 +3,8 @@ admin_carrier_contact_index:
     methods: ['GET']
     defaults:
         _controller: Novanta\CarrierContact\Controller\Admin\CarrierContactController::indexAction
+        _legacy_controller: AdminCarrierContact
+        _legacy_link: AdminCarrierContact
     options:
         expose: true
 

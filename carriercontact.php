@@ -1,6 +1,6 @@
 <?php
 
-use Novanta\Quote\Install\InstallerFactory;
+use Novanta\CarrierContact\Adapter\Install\InstallerFactory;
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 
 $autoloadPath = dirname(__FILE__) . '/vendor/autoload.php';
@@ -14,7 +14,7 @@ class CarrierContact extends Module {
     {
         $this->name = 'carriercontact';
         $this->tab = 'administration';
-        $this->version = '1.0.0';
+        $this->version = '1.1.0';
         $this->author = 'Novanta';
         $this->bootstrap = true;
 

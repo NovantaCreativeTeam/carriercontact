@@ -24,7 +24,7 @@
 
   <div class="card">
     <h3 class="card-header">
-      {{ 'Carrier Contact'|trans({}, 'Modules.Quote.Admin') }}
+      {{ 'Carrier Contact'|trans({}, 'Modules.Carriercontact.Admin') }}
     </h3>
     <div class="card-body">
       <div class="form-wrapper">
@@ -40,11 +40,11 @@
         }) }}
 
         {{ ps.form_group_row(carrierContactForm.email1, {}, {
-          'label': 'Email 1'|trans({}, 'Modules.Quote.Admin'),
+          'label': 'Email 1'|trans({}, 'Modules.Carriercontact.Admin'),
         }) }}
 
         {{ ps.form_group_row(carrierContactForm.email2, {}, {
-          'label': 'Email 2'|trans({}, 'Modules.Quote.Admin')
+          'label': 'Email 2'|trans({}, 'Modules.Carriercontact.Admin')
         }) }}
 
         {% block category_form_rest %}
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <a href="{{ path('admin_quote_configure_index') }}" class="btn btn-outline-secondary">
+      <a href="{{ path('admin_carrier_contact_index') }}" class="btn btn-outline-secondary">
         {{ 'Cancel'|trans({}, 'Admin.Actions') }}
       </a>
       <button class="btn btn-primary float-right" id="save-button">{{ 'Save'|trans({}, 'Admin.Actions') }}</button>

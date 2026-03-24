@@ -69,7 +69,8 @@ class CarrierContactQueryBuilder extends AbstractDoctrineQueryBuilder
             ->createQueryBuilder()
             ->from($this->dbPrefix . 'carrier_contact', 'cc')
             ->leftJoin('cc', $this->dbPrefix . 'carrier', 'c',
-                'cc.id_carrier = c.id_carrier');
+                'cc.id_carrier = c.id_reference')
+            ->add('where', 'c.id_carrier = (SELECT MAX(id_carrier) FROM ps_carrier where id_reference = cc.id_carrier)');
 
         foreach ($filters as $filterName => $filterValue) {
             if ('carrier_name' === $filterName) {

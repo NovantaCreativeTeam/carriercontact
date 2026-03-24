@@ -19,6 +19,8 @@
  */
 namespace Novanta\CarrierContact\Adapter\Install;
 
+use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
+
 if (!defined('_PS_VERSION_')) {
     exit;
 }
@@ -36,6 +38,7 @@ class Installer
     {
         return $this->installDatabase()
             && $this->registerHooks($module)
+            && $this->installTabs()
             && $this->initializeConfiguration($module);
     }
 
@@ -47,6 +50,7 @@ class Installer
     public function uninstall(): bool
     {
         return $this->uninstallDatabase()
+            && $this->uninstallTabs()
             && $this->destroyConfiguration();
     }
 
@@ -137,5 +141,70 @@ class Installer
         }
 
         return true;
+    }
+
+    /**
+     * Funzione che si occupa di istallare le tab del menù
+     * per l'accesso alla gestione dei preventivi
+     *
+     * @return bool
+     */
+    public function installTabs()
+    {
+        $translator = SymfonyContainer::getInstance()->get('translator');
+        $tab_names = [];
+
+        foreach (\Language::getLanguages() as $lang) {
+            $tab_names[$lang['id_lang']] = $translator->trans('Carrier Contacts', [], 'Modules.Carriercontact.Admin', $lang['locale']);
+        }
+
+        return $this->addTab($tab_names, 'AdminCarrierContact', 'AdminParentCustomerThreads');
+    }
+
+    /**
+     * Funzione che si occupa di disitallare le tab del menù
+     * per l'accesso alla gestione dei preventivi
+     *
+     * @return bool
+     */
+    public function uninstallTabs()
+    {
+        $tabRepository = SymfonyContainer::getInstance()->get('prestashop.core.admin.tab.repository');
+        $tabId = (int) $tabRepository->findOneIdByClassName('AdminCarrierContact');
+        if (!$tabId) {
+            return true;
+        }
+
+        $tab = new \Tab($tabId);
+
+        return $tab->delete();
+    }
+
+    /**
+     * Funzione che registra una nuova Tab del menù di amministrazione
+     *
+     * @param string $name
+     * @param string $className
+     * @param string $parentClassName
+     *
+     * @return bool
+     */
+    private function addTab($name, $className, $parentClassName)
+    {
+        $tabRepository = SymfonyContainer::getInstance()->get('prestashop.core.admin.tab.repository');
+
+        $tabId = (int) $tabRepository->findOneIdByClassName($className);
+        if (!$tabId) {
+            $tabId = null;
+        }
+
+        $tab = new \Tab($tabId);
+        $tab->active = 1;
+        $tab->class_name = $className;
+        $tab->name = $name;
+        $tab->id_parent = (int) $tabRepository->findOneIdByClassName($parentClassName);
+        $tab->module = 'carriercontact';
+
+        return $tab->save();
     }
 }

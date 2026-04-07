@@ -66,6 +66,7 @@ class Installer
                 `id_carrier_contact` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
                 `id_carrier` int(11) NOT NULL,
                 `name` varchar(64) NOT NULL,
+                `phone` varchar(32) NULL,
                 `email1` varchar(255) NOT NULL,
                 `email2` varchar(255) NULL,
                 PRIMARY KEY (`id_carrier_contact`)

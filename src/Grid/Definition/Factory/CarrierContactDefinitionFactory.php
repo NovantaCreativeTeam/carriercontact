@@ -51,14 +51,14 @@ class CarrierContactDefinitionFactory extends AbstractGridDefinitionFactory
 
     protected function getName(): string
     {
-        return $this->trans('Carrier Contacts', [], 'Modules.CarrierContact.Admin');
+        return $this->trans('Carrier Contacts', [], 'Modules.Carriercontact.Admin');
     }
 
     protected function getColumns()
     {
         return (new ColumnCollection())
             ->add((new IdentifierColumn('id_carrier_contact'))
-                ->setName($this->trans('ID', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('ID', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'identifier_field' => 'id_carrier_contact',
                     'bulk_field' => 'id_carrier_contact',
@@ -66,25 +66,31 @@ class CarrierContactDefinitionFactory extends AbstractGridDefinitionFactory
                 ])
             )
             ->add((new DataColumn('carrier_name'))
-                ->setName($this->trans('Carrier', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('Carrier', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'field' => 'carrier_name',
                 ])
             )
             ->add((new DataColumn('name'))
-                ->setName($this->trans('Name', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('Name', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'field' => 'name',
                 ])
             )
+            ->add((new DataColumn('phone'))
+                ->setName($this->trans('Phone', [], 'Modules.Carriercontact.Admin'))
+                ->setOptions([
+                    'field' => 'phone',
+                ])
+            )
             ->add((new DataColumn('email1'))
-                ->setName($this->trans('Email 1', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('Email 1', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'field' => 'email1',
                 ])
             )
             ->add((new DataColumn('email2'))
-                ->setName($this->trans('Email 2', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('Email 2', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'field' => 'email2',
                 ])
@@ -113,6 +119,13 @@ class CarrierContactDefinitionFactory extends AbstractGridDefinitionFactory
                         'required' => false,
                     ])
                     ->setAssociatedColumn('name')
+            )
+            ->add(
+                (new Filter('phone', TextType::class))
+                    ->setTypeOptions([
+                        'required' => false,
+                    ])
+                    ->setAssociatedColumn('phone')
             )
             ->add(
                 (new Filter('Email1', EmailType::class))
@@ -145,7 +158,7 @@ class CarrierContactDefinitionFactory extends AbstractGridDefinitionFactory
     {
         return (new GridActionCollection())
             ->add((new LinkGridAction('add_new_carrier_contact'))
-                ->setName($this->trans('Add Carrier contact', [], 'Modules.CarrierContact.Admin'))
+                ->setName($this->trans('Add Carrier contact', [], 'Modules.Carriercontact.Admin'))
                 ->setOptions([
                     'route' => 'admin_carrier_contact_new',
                 ])

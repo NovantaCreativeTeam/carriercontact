@@ -45,6 +45,7 @@ class GetCarrierContactForEditingHandler extends AbstractCarrierContactHandler i
             $carrierContact->getId(),
             $carrierContact->getIdCarrier(),
             $carrierContact->getName(),
+            $carrierContact->getPhone(),
             $carrierContact->getEmail1(),
             $carrierContact->getEmail2(),
         );

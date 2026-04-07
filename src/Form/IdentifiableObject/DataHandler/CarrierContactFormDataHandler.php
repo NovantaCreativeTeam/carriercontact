@@ -47,6 +47,7 @@ class CarrierContactFormDataHandler implements FormDataHandlerInterface
         $command = new AddCarrierContact(
             $data['id_carrier'],
             $data['name'],
+            $data['phone'],
             $data['email1'],
             $data['email2'],
         );
@@ -67,6 +68,7 @@ class CarrierContactFormDataHandler implements FormDataHandlerInterface
         $command = new UpdateCarrierContact($id);
         $command->setCarrierId($data['id_carrier']);
         $command->setName($data['name']);
+        $command->setPhone($data['phone']);
         $command->setEmail1($data['email1']);
         $command->setEmail2($data['email2']);
 

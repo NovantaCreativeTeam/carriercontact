@@ -57,6 +57,13 @@ class CarrierContact
     /**
      * @var string
      *
+     * @ORM\Column(name="phone", type="string", length=32)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="email1", type="string", length=255)
      */
     private $email1;
@@ -120,6 +127,16 @@ class CarrierContact
         $this->name = $name;
 
         return $this;
+    }
+
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): void
+    {
+        $this->phone = $phone;
     }
 
     /**

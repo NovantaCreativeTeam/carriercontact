@@ -47,6 +47,7 @@ class CarrierContactFormDataProvider implements FormDataProviderInterface
         return [
             'id_carrier' => $carrierContact->getId(),
             'name' => $carrierContact->getName(),
+            'phone' => $carrierContact->getPhone(),
             'email1' => $carrierContact->getEmail1(),
             'email2' => $carrierContact->getEmail2(),
         ];

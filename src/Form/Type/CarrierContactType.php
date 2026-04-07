@@ -20,6 +20,9 @@
 
 namespace Novanta\CarrierContact\Form\Type;
 
+use PrestaShop\PrestaShop\Core\ConstraintValidator\Constraints\CleanHtml;
+use PrestaShop\PrestaShop\Core\ConstraintValidator\Constraints\TypedRegex;
+use PrestaShop\PrestaShop\Core\Domain\Address\Configuration\AddressConstraint;
 use PrestaShop\PrestaShop\Core\Form\FormChoiceProviderInterface;
 use PrestaShopBundle\Form\Admin\Type\EmailType;
 use PrestaShopBundle\Form\Admin\Type\TranslatorAwareType;
@@ -27,6 +30,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CarrierContactType extends TranslatorAwareType
@@ -60,6 +64,25 @@ class CarrierContactType extends TranslatorAwareType
             ->add('name', TextType::class, [
                 'label' => $this->trans('Carrier', 'Module.Carriercontact.Admin'),
                 'required' => true,
+            ])
+            ->add('phone', TextType::class, [
+                'label' => $this->trans('Phone', 'Admin.Global'),
+                'required' => false,
+                'empty_data' => '',
+                'constraints' => [
+                    new CleanHtml(),
+                    new TypedRegex([
+                        'type' => TypedRegex::TYPE_PHONE_NUMBER,
+                    ]),
+                    new Length([
+                        'max' => AddressConstraint::MAX_PHONE_LENGTH,
+                        'maxMessage' => $this->trans(
+                            'This field cannot be longer than %limit% characters',
+                            'Admin.Notifications.Error',
+                            ['%limit%' => AddressConstraint::MAX_PHONE_LENGTH]
+                        ),
+                    ]),
+                ],
             ])
             ->add('email1', EmailType::class, [
                 'label' => $this->trans('Email 1', 'Module.Carriercontact.Admin'),

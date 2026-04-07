@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin-dev" source-language="it-IT" target-language="it-IT" datatype="plaintext">
+    <body>
+      <trans-unit id="06e6bd6167f16a86c7329ff98dbee1ff">
+        <source>Carrier contact created successfully.</source>
+        <target>Contatto creato con successo</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="50bb6762d0936061f8609389d7c13ad1">
+        <source>Carrier contact updated successfully.</source>
+        <target>Contatto aggiornato con successo.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4c6e0bf67ba4df6c242ea2e8fc474157">
+        <source>Carrier contact cannot be loaded (or found)</source>
+        <target>Impossibile caricare il contatto, ricaricare la pagine e riprovare, se il problema persiste contattare il webmaster.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

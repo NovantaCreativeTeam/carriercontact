@@ -27,11 +27,13 @@ class EditableCarrierContact
     private $name;
     private $email1;
     private $email2;
+    private $phone;
 
     public function __construct(
         $id,
         $idCarrier,
         $name,
+        $phone,
         $email1,
         $email2
     ) {
@@ -40,6 +42,7 @@ class EditableCarrierContact
         $this->name = $name;
         $this->email1 = $email1;
         $this->email2 = $email2;
+        $this->phone = $phone;
     }
 
     /**
@@ -69,6 +72,14 @@ class EditableCarrierContact
     /**
      * @return mixed
      */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getEmail1()
     {
         return $this->email1;
@@ -81,4 +92,5 @@ class EditableCarrierContact
     {
         return $this->email2;
     }
+
 }

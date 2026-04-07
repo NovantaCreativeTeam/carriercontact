@@ -45,6 +45,7 @@ class CarrierContactQueryBuilder extends AbstractDoctrineQueryBuilder
             cc.id_carrier_contact,
             IFNULL(c.name, \'---\') as carrier_name,
             cc.name as name,
+            cc.phone,
             cc.email1,
             cc.email2
         ');
@@ -82,6 +83,13 @@ class CarrierContactQueryBuilder extends AbstractDoctrineQueryBuilder
 
             if ('name' === $filterName) {
                 $queryBuilder->andWhere("cc.name LIKE :$filterName");
+                $queryBuilder->setParameter($filterName, '%' . $filterValue . '%');
+
+                continue;
+            }
+
+            if ('phone' === $filterName) {
+                $queryBuilder->andWhere("cc.phone LIKE :$filterName");
                 $queryBuilder->setParameter($filterName, '%' . $filterValue . '%');
 
                 continue;

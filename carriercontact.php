@@ -14,7 +14,7 @@ class CarrierContact extends Module {
     {
         $this->name = 'carriercontact';
         $this->tab = 'administration';
-        $this->version = '1.1.0';
+        $this->version = '1.1.1';
         $this->author = 'Novanta';
         $this->bootstrap = true;
 

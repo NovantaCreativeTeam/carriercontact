@@ -24,17 +24,20 @@ class AddCarrierContact
 {
     private $carrierId;
     private $name;
+    private $phone;
     private $email1;
     private $email2;
 
     public function __construct(
         $carrierId,
         $name,
+        $phone,
         $email1,
         $email2 = null
     ) {
         $this->carrierId = $carrierId;
         $this->name = $name;
+        $this->phone = $phone;
         $this->email1 = $email1;
         $this->email2 = $email2;
     }
@@ -53,6 +56,14 @@ class AddCarrierContact
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
     }
 
     /**

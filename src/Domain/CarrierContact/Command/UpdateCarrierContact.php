@@ -28,6 +28,8 @@ class UpdateCarrierContact
 
     private $name;
 
+    private $phone;
+
     private $email1;
 
     private $email2;
@@ -75,6 +77,22 @@ class UpdateCarrierContact
     public function setName($name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
     }
 
     /**

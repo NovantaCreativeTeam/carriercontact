@@ -22,6 +22,36 @@
         <target>Sei sicuro di voler disinstallare il modulo?</target>
         <note>Line: </note>
       </trans-unit>
+      <trans-unit id="636c575a94e9a0c957277e432fb1d49b">
+        <source>New Contact</source>
+        <target>Nuovo contatto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6432849fb3f9b1c45e8726b79a8e0d96">
+        <source>Carrier contact deleted correctly!</source>
+        <target>Contatto cancellato correttamente!</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b718adec73e04ce3ec720dd11a06a308">
+        <source>ID</source>
+        <target>ID</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="914419aa32f04011357d3b604a86d7eb">
+        <source>Carrier</source>
+        <target>Corriere</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="49ee3087348e8d44e1feda1917443987">
+        <source>Name</source>
+        <target>Nome</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bcc254b55c4a1babdf1dcb82c207506b">
+        <source>Phone</source>
+        <target>Telefono</target>
+        <note>Line: </note>
+      </trans-unit>
       <trans-unit id="cad275df2f3d72c6904ecec22ee95416">
         <source>Email 1</source>
         <target>Email 1</target>
@@ -30,6 +60,11 @@
       <trans-unit id="c7d8fb705c52105689d00cba223a33fa">
         <source>Email 2</source>
         <target>Email 2</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="ca5cab4b2f86d33fdf4d7c97beb11d23">
+        <source>Add Carrier contact</source>
+        <target>Aggiungi contatto</target>
         <note>Line: </note>
       </trans-unit>
     </body>

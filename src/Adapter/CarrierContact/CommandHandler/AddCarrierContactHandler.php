@@ -47,6 +47,7 @@ class AddCarrierContactHandler extends AbstractCarrierContactHandler implements 
         }
 
         // 3. Set Properties
+        $carrierContact->setPhone($command->getPhone());
         $carrierContact->setEmail1($command->getEmail1());
         $carrierContact->setEmail2($command->getEmail2());
         $carrierContact->setName($command->getName());

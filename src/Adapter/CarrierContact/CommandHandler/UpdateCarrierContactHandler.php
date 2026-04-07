@@ -35,6 +35,7 @@ class UpdateCarrierContactHandler extends AbstractCarrierContactHandler implemen
             $carrierContact->setIdCarrier($carrier->id_reference);
         }
 
+        $carrierContact->setPhone($command->getPhone());
         $carrierContact->setEmail1($command->getEmail1());
         $carrierContact->setEmail2($command->getEmail2());
         $carrierContact->setName($command->getName());

@@ -39,6 +39,10 @@
           'help': 'Invalid characters:'|trans({}, 'Admin.Notifications.Info') ~ ' <>;=#{}'
         }) }}
 
+        {{ ps.form_group_row(carrierContactForm.phone, {}, {
+          'label': 'Phone'|trans({}, 'Admin.Global')
+        }) }}
+
         {{ ps.form_group_row(carrierContactForm.email1, {}, {
           'label': 'Email 1'|trans({}, 'Modules.Carriercontact.Admin'),
         }) }}
